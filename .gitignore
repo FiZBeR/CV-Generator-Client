@@ -1,0 +1,76 @@
+# ==========================================
+# 1. DEPENDENCIAS (Nunca se suben al repo)
+# ==========================================
+node_modules/
+/jspm_packages/
+/web_modules/
+
+# ==========================================
+# 2. PRODUCCIÓN / COMPILACIÓN (Archivos generados)
+# ==========================================
+dist/
+build/
+out/
+.next/
+.docusaurus/
+# Caché de TypeScript y builds rápidos
+.tsbuildinfo
+.eslintcache
+
+# ==========================================
+# 3. VARIABLES DE ENTORNO (Seguridad Crítica)
+# ==========================================
+# Contienen credenciales, tokens y llaves privadas. 
+# NUNCA deben subirse al control de versiones.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.local
+
+# Nota: SÍ debes subir archivos como `.env.example` (sin datos reales) 
+# para que otros desarrolladores sepan qué variables configurar.
+
+# ==========================================
+# 4. CONFIGURACIONES DE EDITORES / IDEs
+# ==========================================
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.history/
+
+# WebStorm / IntelliJ / JetBrains
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistemas Operativos
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# 5. TESTING & LOGS
+# ==========================================
+coverage/
+*.lcov
+.nyc_output
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# 6. HERRAMIENTAS OPCIONALES (Si usas Docker/Next/Vite)
+# ==========================================
+.vite/
+.parcel-cache/
+.turbo/

@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+.a4-sheet {
+    aspect-ratio: 1 / 1.414; /* A4 aspect ratio */
+    width: 100%;
+    max-width: 800px;
+}
+/* Custom scrollbar for textareas */
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+    background-color: #e5e2e3;
+    border-radius: 4px;
+}
+
+.nav-link {
+    transition: color 0.2s ease-in-out;
+}
