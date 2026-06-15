@@ -1,25 +1,46 @@
 import React from "react";
+import Boton from "../ui/Boton";
 
 const RightPanel = () => {
+
+  const handleSave = () => {
+    setTimeout(() => {
+        console.log("¡CV Guardado!");
+    }, 2000);
+  };
+
+  const handleDownload = () => {
+    setTimeout(() => {
+        console.log("¡CV Guardado!");
+    }, 2000);
+  };
+
+
   return (
       <section className="w-full md:w-1/2 bg-surface-container h-full flex flex-col relative">
         {/* Preview Top Bar */}
         <div className="h-16 border-b border-outline-variant flex items-center justify-between px-gutter bg-surface-container-lowest shrink-0">
-          <div className="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-surface-tint"></span>
+          <div className="font-label-caps text-label-caps text-primary flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-primary"></span>
             Vista Previa del Documento
           </div>
           <div className="flex gap-2">
-            <button className="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-container-low transition-colors rounded flex items-center gap-2">
-              <span className="material-symbols-outlined text-[16px]">save</span>
-              Guardar Borrador
-            </button>
-            <button className="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-container-low transition-colors rounded flex items-center gap-2">
-              <span className="material-symbols-outlined text-[16px]">
-                download
-              </span>
-              Descargar PDF
-            </button>
+            <Boton
+              text='Guardar Borrador'
+              onClick={handleSave}
+              color="secondary"
+              isFullWidth={true}
+              icon="save"
+            />
+
+            <Boton
+              text='Descargar PDF'
+              onClick={handleDownload}
+              color="secondary"
+              isFullWidth={true}
+              icon="download"
+            />
+            
           </div>
         </div>
         {/*Canvas Area */}

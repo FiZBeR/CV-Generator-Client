@@ -1,6 +1,18 @@
 import React from "react";
+import TextArea from "../ui/TextArea";
+import Boton from "../ui/Boton";
 
-const CenterPanel = () => {
+interface CenterpanelProps {
+  datosUser: string;
+  setDatosUser: (valor: string) => void;
+  vacante: string;
+  setVacante: (valor: string) => void;
+  isLoading: boolean;
+  onGenerate: () => void;
+}
+
+const CenterPanel = ({ datosUser, setDatosUser, vacante, setVacante, isLoading, onGenerate}: CenterpanelProps) => {
+
   return (
     
       <section className="w-full md:w-1/2 bg-surface-container-lowest h-full flex flex-col border-b md:border-b-0 md:border-r border-outline-variant relative z-10">
@@ -15,40 +27,33 @@ const CenterPanel = () => {
             </p>
           </header>
           <form className="space-y-xl" id="cv-form">
-            {/*<!-- Section 1 -->*/}
             <div className="group">
-              <label className="block font-label-caps text-label-caps text-on-surface mb-sm">
-                1. Tu perfil y experiencia
-              </label>
-              <textarea
-                className="w-full h-48 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm p-md focus:border-primary focus:ring-0 transition-colors resize-none placeholder-on-surface-variant opacity-70 focus:opacity-100"
-                placeholder="Pega aquí tu experiencia laboral, educación y logros clave. Puedes incluir viñetas o texto en bruto."
-              ></textarea>
+              <TextArea 
+                label='Tu perfil y tu experiencia'
+                placeholder="Escribe aqui tu informacion de persola, tu info de contacto, tu experiencia, educacion o proyectos y los idioamas que sabes"
+                value={datosUser}
+                onChange={setDatosUser}
+              />
             </div>
-            {/*<!-- Section 2 -->*/}
             <div className="group">
-              <label className="block font-label-caps text-label-caps text-on-surface mb-sm">
-                2. Descripción de la vacante
-              </label>
-              <textarea
-                className="w-full h-48 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm p-md focus:border-primary focus:ring-0 transition-colors resize-none placeholder-on-surface-variant opacity-70 focus:opacity-100"
-                placeholder="Pega aquí la descripción del puesto al que aplicas. La IA alineará tu experiencia con estas palabras clave."
-              ></textarea>
+              <TextArea
+                label='Descripcion de la vacante'
+                placeholder="Pega aqui la descripcion completa de la vacante a la que vas a aplicar"
+                value={vacante}
+                onChange={setVacante}
+              />
             </div>
           </form>
         </div>
-        {/*<!-- Sticky Bottom Action -->*/}
         <div className="p-gutter bg-surface-container-lowest border-t border-outline-variant mt-auto">
-          <button
-            className="w-full bg-primary text-on-primary py-3 px-6 rounded font-label-caps text-label-caps tracking-wide hover:bg-surface-tint transition-colors flex items-center justify-center gap-2"
-            id="generate-btn"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[18px]">
-              auto_awesome
-            </span>
-            Generar CV con IA
-          </button>
+          <Boton
+            text='Generar CV con IA'
+            onClick={onGenerate}
+            isLoading={isLoading}
+            color="primary"
+            isFullWidth={true}
+            icon="auto_awesome"
+          />
         </div>
       </section>
   );
