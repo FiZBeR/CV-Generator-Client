@@ -12,7 +12,7 @@ const Boton = ({text, onClick, isLoading, color, isFullWidth, icon}: BotonProps)
 
     const colorCSS = color === 'primary' 
         ? 'bg-primary text-white hover:bg-gray-800'  
-        : 'bg-white text-black border border-outline-variant hover:bg-gray-300 rounded-lg';
+        : 'px-4 py-2 bg-tertiary text-black border border-outline-variant hover:bg-primary rounded-lg';
 
     const anchoCSS = isFullWidth ? 'w-full' : '';
 
