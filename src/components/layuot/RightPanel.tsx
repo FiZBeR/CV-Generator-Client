@@ -1,6 +1,10 @@
 import Boton from "../ui/Boton";
 import type { HojaDeVida } from "../../types/cv.js";
 import SkeletonCV from "../ui/SkeletonCV";
+import HeaderCV from "../cvComponents/HeaderCV.js";
+import AboutMe from "../cvComponents/AboutMe.js";
+import Habilidades from "../cvComponents/Habilidades.js";
+import Experiencia from "../cvComponents/Experiencia.js";
 
 interface RightPanelProps {
   isLoading?: boolean;
@@ -47,7 +51,12 @@ const RightPanel = ({isLoading, onDownload, hojaDeVida}: RightPanelProps) => {
         { !hojaDeVida ? (
           <SkeletonCV/>
         ) : (
-          <> CV Cargado...</>
+          <> 
+            <HeaderCV datos={hojaDeVida.datosPersonales}/>
+            <AboutMe texto={hojaDeVida.aboutMe} />
+            <Habilidades habilidades={hojaDeVida.habilidades} />
+            <Experiencia experiencia={hojaDeVida.experiencia} proyectos={hojaDeVida.proyectos} />
+          </>
         )}
         
       </section>
