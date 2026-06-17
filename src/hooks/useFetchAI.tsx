@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
 import type { HojaDeVida } from "../types/cv";
+import toast from 'react-hot-toast';
 
 const useFetchAI = () => {
 
@@ -17,13 +18,19 @@ const useFetchAI = () => {
         try {
             const response = await axios.post(api, { datos: perfil, vacante: vacante });
             setDataHV(response.data.cv);
-            console.log(response.data.cv);
+            toast.success('HV generada con exito');
         } catch (err) {
             console.error(err);
-        setError("Ocurrió un error al generar el CV");
+            setError("Ocurrió un error al generar el CV");
+            toast.error(err.message);
         }  finally {
             setIsLoading(false);
         }
+    }
+
+    const resetData = () => {
+        setDataHV(null);
+        setError(null);
     }
 
 
@@ -31,7 +38,8 @@ const useFetchAI = () => {
     dataHV,
     isLoading,
     error,
-    generarCV
+    generarCV,
+    resetData
   }
 }
 

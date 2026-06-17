@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
 import type { HojaDeVida } from "../types/cv";
+import toast from 'react-hot-toast/headless';
 
 const useFetchPDF = () => {
 
@@ -32,7 +33,8 @@ const useFetchPDF = () => {
 
         } catch (err) {
             console.error(err);
-        setErrorPDF("Ocurrió un error al generar el CV");
+            setErrorPDF("Ocurrió un error al generar el CV");
+            toast.error(err)
         }  finally {
             setIsDownload(false);
         }

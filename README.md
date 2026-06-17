@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# 🎨 Resume AI - Frontend Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es la interfaz de usuario (UI) para el Generador de Hojas de Vida con IA. Una aplicación web de una sola página (SPA) moderna, fluida y altamente interactiva, diseñada para ofrecer una experiencia limpia mientras la IA trabaja por detrás.
 
-Currently, two official plugins are available:
+## ✨ Características de la Interfaz
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* ⚡ **Arquitectura Moderna:** Construido sobre React 19 y Vite 8 para tiempos de carga e inicio en desarrollo casi instantáneos.
+* 🛡️ **Tipado Estricto:** Desarrollado al 100% con TypeScript, garantizando que los datos del formulario coincidan perfectamente con la estructura que espera el Backend y la API de Gemini.
+* 🎨 **Tailwind Avanzado:** Estilos responsivos con animaciones personalizadas para los estados de carga (efectos de borde animado "Neón/Passepartout").
+* 📦 **Estructura de Componentes Limpia:** División modular entre paneles de control (inputs) y panel de previsualización (hoja de vida).
 
-## React Compiler
+## 📂 Estructura del Proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Para mantener el código mantenible, organicé la carpeta `src/` de la siguiente manera:
 
-## Expanding the ESLint configuration
+```text
+src/
+├── assets/          # Imágenes, logos y estilos globales.
+├── components/      # Componentes visuales reutilizables (Botones, Modales, Skeletons).
+│   ├── Header.tsx
+│   ├── LeftPanel.tsx   # Formulario y entradas de datos.
+│   └── RightPanel.tsx  # Vista previa del CV en diseño A4.
+├── hooks/           # Lógica separada de la UI (ej. manejo de formularios, fetch de datos).
+├── services/        # Módulos encargados de hacer fetch a la API del Backend.
+├── types/           # Interfaces de TypeScript que definen el contrato del CV.
+│   └── cv.ts
+├── App.tsx          # Componente principal que orquesta el estado global.
+└── main.tsx         # Punto de entrada de la aplicación.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚦 Cómo levantar el Frontend en local
+Sigue estos pasos para ejecutar la interfaz en tu entorno de desarrollo.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Variables de Enorno
+Crea un archivo .env en la raíz de esta carpeta y configura las rutas de tu API local (el puerto 3900 de tu Backend):
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# URL para enviar los datos y obtener el JSON optimizado por Gemini
+VITE_API_URL_AI=http://localhost:3900/generate-cv
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# URL para enviar el JSON listo y descargar el archivo PDF
+VITE_API_URL_PDF=http://localhost:3900/download-pdf
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalación y Arranque
+Abre tu terminal en esta carpeta y ejecuta:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Instalar dependencias
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Levantar servidor de desarrollo (Vite)
+npm run dev
+
+Abre tu navegador en la dirección que te indique la consola (normalmente http://localhost:5173) y empieza a crear tus CVs.

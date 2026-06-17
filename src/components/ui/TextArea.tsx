@@ -12,7 +12,7 @@ const TextArea = ({label, placeholder, value, onChange}: TextAreaProps) => {
             {label}
         </label>
         <textarea
-            className="w-full h-48 bg-surface-container-lowest border border-outline-variant text-primary font-body-sm text-body-sm p-md focus:border-primary focus:ring-0 transition-colors resize-none placeholder-on-surface-variant opacity-70 focus:opacity-100"
+            className="w-full h-48 bg-surface-container-lowest border border-outline-variant text-black font-body-sm text-body-sm p-md focus:border-primary focus:ring-0 transition-colors resize-none placeholder-on-surface-variant opacity-70 focus:opacity-100"
             placeholder={placeholder}
             value={value}
             onChange={(e) => {

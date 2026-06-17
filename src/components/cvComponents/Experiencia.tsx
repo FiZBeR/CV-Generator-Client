@@ -57,7 +57,7 @@ const Experiencia = ({ experiencia, proyectos}: Props) => {
                                 <div className="flex items-baseline mb-1">
                                     <h3 className="text-[15.5px] leading-snug">
                                         {/* Aquí usamos las llaves específicas de los proyectos */}
-                                        <span className="font-bold text-black">{proy.titulo}</span>
+                                        <span className="font-bold text-black">{proy.nombre}</span>
                                         <span className="text-gray-400 font-light mx-2">—</span>
                                         <span className="italic text-gray-600">{proy.descripcion}</span>
                                     </h3>

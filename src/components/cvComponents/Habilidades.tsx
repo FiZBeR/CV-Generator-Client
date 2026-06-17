@@ -19,22 +19,12 @@ const Habilidades = ({ habilidades }: HabilidaesProps) => {
             
             <hr className="border-t border-[#2b66a0] mb-2" />
             
-            <div className="grid grid-cols-[130px_1fr] gap-x-2 gap-y-1 text-[14.5px] leading-relaxed text-black">
+            <div className="text-[14.5px] leading-relaxed text-black text-justify">
+                {/* El título como elemento en línea (no rompe el bloque) */}
+                <span className="font-bold mr-2">Tecnologías:</span>
                 
-                <span className="font-bold">Tecnologías</span>
-                
+                {/* El texto que fluirá y envolverá el espacio vacío */}
                 <span>{habilidadesTexto}</span>
-                
-                {/* NOTA : 
-                  Cuando modifiquemos el Backend para recibir categorías reales, 
-                  solo tendrás que mapear filas como esta:
-                  
-                  <span className="font-bold">Frontend</span>
-                  <span>React, Tailwind, Vite</span>
-                  
-                  <span className="font-bold">Backend</span>
-                  <span>Node.js, Express, Prisma</span>
-                */}
             </div>
         </section>
   )
