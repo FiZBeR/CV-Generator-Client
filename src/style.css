@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 .a4-sheet {
     aspect-ratio: 1 / 1.414; /* A4 aspect ratio */
