@@ -3,9 +3,12 @@
 export default {
     darkMode: "class",
     content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}", // <-- Este comodín busca en TODO src, sin importar la subcarpeta
-    ],
+        "./src/**/*.{js,ts,jsx,tsx,mdx}",
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+        // Agrega aquí la ruta exacta de tu modal si está fuera
+        "./modals/**/*.{js,ts,jsx,tsx}",
+      ],
     theme: {
         extend: {
             "colors": {

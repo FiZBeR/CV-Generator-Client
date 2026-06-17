@@ -20,9 +20,26 @@ const useFetchAI = () => {
             setDataHV(response.data.cv);
             toast.success('HV generada con exito');
         } catch (err) {
-            const mensajeError = err instanceof Error ? err.message : "Error al descargar el PDF";
-            setError("Ocurrió un error al generar el CV");
-            toast.error(mensajeError);
+            let mensajeError = "Error al generar el CV";
+
+            if (axios.isAxiosError(err)) {
+                const status = err.response?.status;
+                const backendMessage = err.response?.data?.error?.message;
+
+                if (status === 503) {
+                    mensajeError = "El servicio de IA está saturado en este momento, intenta de nuevo en unos minutos.";
+                } else if (!err.response) {
+                    // No hubo respuesta del servidor (timeout, sin conexión, CORS, etc.)
+                    mensajeError = "No se pudo conectar con el servidor. Verifica tu conexión.";
+                } else if (backendMessage) {
+                    mensajeError = backendMessage;
+                }
+            } else if (err instanceof Error) {
+                mensajeError = err.message;
+            }
+
+            setError(mensajeError);
+            toast.error(mensajeError)
         }  finally {
             setIsLoading(false);
         }
