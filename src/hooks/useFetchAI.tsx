@@ -20,9 +20,9 @@ const useFetchAI = () => {
             setDataHV(response.data.cv);
             toast.success('HV generada con exito');
         } catch (err) {
-            console.error(err);
+            const mensajeError = err instanceof Error ? err.message : "Error al descargar el PDF";
             setError("Ocurrió un error al generar el CV");
-            toast.error(err.message);
+            toast.error(mensajeError);
         }  finally {
             setIsLoading(false);
         }

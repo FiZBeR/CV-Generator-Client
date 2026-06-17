@@ -1,10 +1,6 @@
-interface SkeletonProps {
-  isLoading?: boolean;
-}
 
-const SkeletonCV = ({ isLoading }: SkeletonProps) => {
+const SkeletonCV = () => {
 
-  isLoading = true;
 
   return (
     // 1. EL CONTENEDOR A4 (La base de la hoja)

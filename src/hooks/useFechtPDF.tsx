@@ -32,9 +32,9 @@ const useFetchPDF = () => {
             window.URL.revokeObjectURL(url);
 
         } catch (err) {
-            console.error(err);
+            const mensajeError = err instanceof Error ? err.message : "Error al descargar el PDF";
             setErrorPDF("Ocurrió un error al generar el CV");
-            toast.error(err)
+            toast.error(mensajeError)
         }  finally {
             setIsDownload(false);
         }

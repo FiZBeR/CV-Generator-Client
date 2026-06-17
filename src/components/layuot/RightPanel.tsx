@@ -45,7 +45,7 @@ const RightPanel = ({isLoading, onDownload, hojaDeVida, alert}: RightPanelProps)
         </div>
         <div className="overflow-y-auto">
         { isLoading || !hojaDeVida ? (
-          <SkeletonCV isLoading={isLoading}/>
+          <SkeletonCV />
         ) : (
           <div className="bg-white text-black mx-auto shadow-2xl ring-1 ring-gray-900/5" 
               style={{ 

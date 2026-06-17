@@ -25,7 +25,7 @@ export interface Educacion {
 }
 
 export interface Proyecto {
-    titulo: string;
+    nombre: string;
     descripcion: string;
     tecnologias: string[];
     enlace: string;
