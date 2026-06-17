@@ -1,5 +1,9 @@
 tailwind.config = {
     darkMode: "class",
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}", // <-- Este comodín busca en TODO src, sin importar la subcarpeta
+    ],
     theme: {
         extend: {
             "colors": {
