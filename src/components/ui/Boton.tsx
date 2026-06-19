@@ -18,7 +18,7 @@ const Boton = ({text, onClick, isLoading, color, isFullWidth, icon}: BotonProps)
 
   return (
         <button
-            className={`${anchoCSS} ${colorCSS} text-on-primary py-3 px-6 rounded font-label-caps text-label-caps tracking-wide hover:bg-surface-tint transition-colors flex items-center justify-center gap-2`}
+            className={`${anchoCSS} ${colorCSS} text-on-primary py-3 px-6 rounded font-label-caps text-label-caps tracking-wide hover:bg-surface-tint transition-colors flex items-center justify-center gap-2 cursor-pointer`}
             id="generate-btn"
             type="button"
             onClick={onClick}

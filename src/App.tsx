@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import CenterPanel from './components/layuot/CenterPanel.tsx'
 import RightPanel from './components/layuot/RightPanel.tsx'
 import useFetchAI from './hooks/useFetchAI.tsx';
@@ -58,12 +58,18 @@ function App() {
     toast.success('Documento Limpio, iniciemos de nuevo!')
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpen(true);
+    }, 2000)
+  }, [])
+
   return (
     <>
       <Header reset={handleReset} open={() => setIsOpen(true)} alert={handleAlert}/> 
       <Tips isOpen={isOpen} onClose={() => setIsOpen(false)}/> 
         
-      <main className="flex-1 flex flex-col md:flex-row h-[calc(100vh-64px)]  w-full overflow-hidden">
+      <main className="flex-1 flex flex-col md:flex-row md:h-[calc(100vh-64px)]  w-full md:overflow-hidden">
       
      
       <CenterPanel 

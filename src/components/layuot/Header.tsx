@@ -23,7 +23,7 @@ const Header = ({ reset, open, alert }: HeaderProp) => {
           </button>
           <button
             type="button"
-            className="flex items-center gap-2 text-red-500 hover:text-primary transition-colors animate-pulse  hover:animate-none font-label-caps text-label-caps"
+            className="flex items-center gap-2 text-red-500 hover:text-primary transition-colors animate-pulse cursor-pointer hover:animate-none font-label-caps text-label-caps"
             onClick={(e) => {
               console.log("¿Llegó la función open?", open);
               e.preventDefault(); // <-- ESTA LÍNEA ES LA LLAVE MAESTRA

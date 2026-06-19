@@ -30,22 +30,27 @@ const Tips = ({ isOpen, onClose }: TipsModalProps) => {
         }}
       >
         <h2 className="text-xl font-bold mb-4 text-primary">
-          Cómo generar un CV PRO
+          Sigue estos tips para un mejor resultado
         </h2>
         <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm">
           <li>
-            <b>Datos y Enlaces:</b> Añade tus URLs (LinkedIn, GitHub,
-            Portafolio). Sé muy específico con tu stack técnico y versiones (ej:
-            "React 19, Node.js con Express, Prisma ORM").
+            <b className="text-[#D35D3F]">Datos personales y habilidades:</b> No olvides colocar tus datos personales como, <b>nombre y apellidos</b>, tu <b>titulo profesional</b>
+            e informacion de contacto como tu <b>telefono</b>, <b>email</b> y tu <b>link de Linkedin</b>. Para que tengas mas oportunidad al pasar los filtras 
+            ATS coloca en un parrafo palabras claves alusivas a tus <b>habilidades</b> como profesional.
           </li>
           <li>
-            <b>Métricas y Contexto:</b> No redactes, solo lanza los datos crudos
-            a la IA. Usa números reales, volumen de usuarios o alcance (ej:
-            "Lideré equipo de 3", "Migré base de datos de 10GB", "Reduje tiempos
-            de carga un 30%").
+            <b className="text-[#D35D3F]">Experiencia y Proyectos:</b> Es fundamental que para que tu Experiencia se vea bien reflejada agregues el <b>nombre de la empresa</b> y el <b>rol
+            que desempeñaste</b>, junto a la <b>fecha de inicio y fin</b> si corresponde junto a <b>tu logros</b>.
+
+            Si no cuentas con Experiencia laboral puedes agregar <b>proyectos personales</b> que reflejen tus capacidades tecnicas, coloca el <b>nombre</b> del 
+            proyecto junto a una <b>descripcion</b> del mismo, seria ideal que colocaras fechas de inicio y de fin para dar una idea de progrecion en el tiempo.
           </li>
           <li>
-            <b>El Blanco Perfecto (Vacante):</b> Pega la descripción exacta del
+            <b className="text-[#D35D3F]">Educacion e Idiomas:</b> Esta seccion es muy facil, solo coloca el <b>nombre de la institucion</b>, el <b>titulo</b> que obtuviste y la <b>fecha</b> en la 
+            que te graduaste, la IA hara el resto por ti, si tienes habilidades en otros idiamas, colocalas, junto al nivel que tienes.
+          </li>
+          <li>
+            <b className="text-[#D35D3F]">El Blanco Perfecto (Vacante):</b> Pega la descripción <b>exacta</b> del
             puesto y la empresa. Esto obliga a la IA a inyectar las palabras
             clave exactas que los filtros automáticos (ATS) de los reclutadores
             están buscando.
@@ -53,7 +58,7 @@ const Tips = ({ isOpen, onClose }: TipsModalProps) => {
         </ul>
         <button
           onClick={onClose}
-          className="mt-6 w-full py-2 bg-primary text-white rounded-lg font-bold"
+          className="mt-6 w-full py-2 bg-primary text-white rounded-lg font-bold cursor-pointer"
         >
           ¡Entendido!
         </button>
