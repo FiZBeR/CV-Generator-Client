@@ -46,7 +46,7 @@ const CenterPanel = ({
             placeholder="Pega aquí tu resumen profesional, historial laboral, logros y formación…"
             value={datosUser}
             onChange={setDatosUser}
-            maxLength={2400}
+            maxLength={6000}
             rows={7}
             showCounter={true}
           />
@@ -64,10 +64,11 @@ const CenterPanel = ({
             placeholder="Pega aqui la descripcion completa de la vacante a la que vas a aplicar"
             value={vacante}
             onChange={setVacante}
-            maxLength={1200}
+            maxLength={3000}
+            rows={4}
             showCounter={true}
           />
-          <p className="text-[12.5px] leading-[1.5] text-text-muted">
+          <p className="text-[12.5px] mt-[10px] leading-[1.5] text-text-muted">
             La IA extrae las keywords del puesto y alinea tu CV con lo que busca
             el reclutador.
           </p>

@@ -86,3 +86,7 @@ textarea::-webkit-scrollbar-thumb {
   --color-pill-hover: rgba(255,255,255,0.08);
   --shadow-glow-green: 0 0 20px rgba(0,255,102,0.4);
 }
+
+header {
+  margin-bottom: 0 !important;
+}

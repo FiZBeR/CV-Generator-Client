@@ -1,6 +1,5 @@
 import Boton from "../ui/Boton";
 import type { HojaDeVida } from "../../types/cv.js";
-import SkeletonCV from "../ui/SkeletonCV";
 import HeaderCV from "../cvComponents/HeaderCV.js";
 import AboutMe from "../cvComponents/AboutMe.js";
 import Habilidades from "../cvComponents/Habilidades.js";
@@ -66,36 +65,27 @@ const RightPanel = ({
             icon="download"
           />
         </div>
-
-        
       </div>
 
       {/* Canvas: área de vista previa */}
-      <div className="flex-1 overflow-y-auto flex justify-center py-[22px] px-1.5 pb-2 scrollbar-thin scrollbar-thumb-border-hairline">
+      <div className=" flex-1  flex justify-center py-[22px] px-1.5 pb-2 scrollbar-thin scrollbar-thumb-border-hairline">
         {isLoading || !hojaDeVida ? (
           <>
-            <div 
-  className="flex items-center gap-2.5 py-4 pb-1 text-[13px] text-text-muted"
-  id="preview-status"
-  data-od-id="preview-status"
->
-  <span 
-    className="w-2 h-2 rounded-full flex-none bg-white/28"
-    aria-hidden="true"
-  />
-  <span id="status-text">
-    En espera — completa el formulario para generar tu CV.
-  </span>
-</div>
-          <SkeletonCV />
+            <div className="flex flex-col items-center w-full h-full">
+              {/* 3. El placeholder del CV (sustituye a <SkeletonCV />) */}
+              <div className="flex-1 flex items-center justify-center w-full">
+                <p className="text-2xl md:text-3xl font-light text-center text-text-muted">
+                  <strong className="font-bold">TÚ</strong> CV APARECERÁ AQUÍ
+                </p>
+              </div>
+            </div>
           </>
         ) : (
           <div
-            className="bg-white text-black mx-auto shadow-2xl ring-1 ring-gray-900/5"
+            className="bg-white overflow-y-auto text-black mx-auto shadow-2xl ring-1 ring-gray-900/5"
             style={{
               width: "100%",
               maxWidth: "794px",
-              minHeight: "1123px",
               padding: "40px 50px",
             }}
           >

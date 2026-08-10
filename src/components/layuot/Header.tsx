@@ -6,7 +6,7 @@ interface HeaderProp {
 
 const Header = ({ reset, open, alert }: HeaderProp) => {
   return (
-    <header className="sticky top-0 mb-0 z-20 bg-bg-primary/72 backdrop-blur-glass border-b border-border-glass h-header">
+    <header style={{ marginBottom: 0 }} className="sticky top-0 !mb-0 z-20 bg-bg-primary/72 backdrop-blur-glass border-b border-border-glass h-header">
       <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between gap-gap px-12">
         {/* Brand */}
         <button className="inline-flex items-center gap-2.5 font-display font-bold text-[19px] tracking-[-0.02em] text-text-primary">
@@ -19,15 +19,15 @@ const Header = ({ reset, open, alert }: HeaderProp) => {
         {/* Navegación */}
         <nav className="flex gap-7" aria-label="Navegación principal">
           <button
-            className="relative text-sm text-text-muted py-2 px-0.5 hover:text-text-primary active:text-text-primary after:content-[''] after:absolute after:inset-x-0.5 after:bottom-0 after:h-0.5 after:rounded-sm after:bg-brand-accent"
+            className="relative font-bold text-sm text-text-primary py-2 px-0.5 active:text-text-primary after:content-[''] after:absolute after:inset-x-0.5 after:bottom-0 after:h-0.5 after:rounded-sm after:bg-brand-accent"
             onClick={() => alert()}
           >
             
             My Resumes
           </button>
           <button
-            className="relative text-sm text-text-muted py-2 px-0.5 hover:text-text-primary"
-            onClick={() => alert()}
+            className="relative text-sm text-text-muted py-2 px-0.5 hover:text-text-primary hover: font-bold"
+            onClick={() => open()}
           >
             Tips
           </button>
@@ -46,6 +46,7 @@ const Header = ({ reset, open, alert }: HeaderProp) => {
           <button
             className="w-11 h-11 rounded-sm grid place-items-center bg-transparent border border-transparent text-text-muted hover:text-text-primary hover:bg-pill hover:border-border-soft"
             aria-label="Configuración"
+            onClick={() => alert()}
           >
             <svg
               viewBox="0 0 24 24"
