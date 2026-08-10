@@ -4,11 +4,6 @@
 @tailwind utilities;
 @config "../tailwind.config.js";
 
-.a4-sheet {
-    aspect-ratio: 1 / 1.414; /* A4 aspect ratio */
-    width: 100%;
-    max-width: 800px;
-}
 /* Estilos para scrollbar en textareas (opcional) */
 textarea::-webkit-scrollbar {
     width: 8px;
@@ -60,6 +55,7 @@ textarea::-webkit-scrollbar-thumb {
     font-size: 15px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   /* Scrollbar (opcional, para igualar) */

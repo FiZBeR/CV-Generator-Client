@@ -25,14 +25,14 @@ const Educacion = ({ educacion, idiomas }: EducacionProps) => {
                                 : edu.fechaFin;
 
                             return (
-                                <div key={index} className="flex justify-between items-baseline mb-1">
+                                <div key={index} className="flex justify-between items-baseline mb-1 flex-wrap gap-x-2 gap-y-1">
                                     <h3 className="text-[15.5px] leading-snug">
                                         <span className="font-bold text-black">{edu.titulo}</span>
                                         <span className="text-gray-400 font-light mx-2">—</span>
                                         <span className="italic text-gray-600">{edu.institucion}</span>
                                     </h3>
                                     {fechaTexto && (
-                                        <span className="text-[14px] text-gray-500 ml-4 whitespace-nowrap">
+                                        <span className="text-[14px] text-gray-500 ml-4">
                                             {fechaTexto}
                                         </span>
                                     )}

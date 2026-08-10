@@ -20,8 +20,7 @@ const CenterPanel = ({
 }: CenterpanelProps) => {
   return (
     <section
-      className="col-span-5 bg-bg-glass backdrop-blur-glass-sm border border-border-accent shadow-glass p-8 flex flex-col overflow-y-auto"
-      style={{ height: "calc(100dvh - 184px)" }}
+      className="lg:col-span-5 bg-bg-glass backdrop-blur-glass-sm border border-border-accent shadow-glass p-6 lg:p-8 flex flex-col overflow-y-auto lg:h-[calc(100dvh-184px)]"
       data-od-id="panel-form"
     >
       <header className="mb-7">

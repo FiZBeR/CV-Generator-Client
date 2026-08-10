@@ -82,11 +82,11 @@ function App() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('./public/fondo.jpg')" }}
+          style={{ backgroundImage: "url('/fondo.jpg')" }}
         />
         <div className="absolute inset-0 z-1 bg-img-overlay" />
       </div>
-      <main className="relative z-10 max-w-[1440px] mx-auto px-12 py-12 pb-16 grid grid-cols-12 gap-6 min-h-[calc(100dvh-72px)] items-start">
+      <main className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-6 lg:py-12 pb-8 lg:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 min-h-[calc(100dvh-72px)] items-start">
         <CenterPanel
           datosUser={perfil}
           setDatosUser={setPerfil}

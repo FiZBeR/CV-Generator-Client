@@ -19,7 +19,7 @@ const Experiencia = ({ experiencia, proyectos}: Props) => {
                     <div className="flex flex-col gap-4">
                         {experiencia.map((exp, index) => (
                             <div key={index}>
-                                <div className="flex justify-between items-baseline mb-1">
+                                <div className="flex justify-between items-baseline mb-1 flex-wrap gap-x-2 gap-y-1">
                                     <h3 className="text-[15.5px] leading-snug">
                                         <span className="font-bold text-black">{exp.puesto}</span>
                                         <span className="text-gray-400 font-light mx-2">—</span>

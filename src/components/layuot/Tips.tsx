@@ -7,9 +7,9 @@ const Tips = ({ isOpen, onClose }: TipsModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
       <div
-        className="bg-surface p-6 rounded-2xl max-w-md w-full shadow-2xl border border-border-glass"
+        className="bg-surface p-6 rounded-2xl max-w-md w-full max-h-[90dvh] overflow-y-auto shadow-2xl border border-border-glass"
         // bg-surface = #0b0b0f (fondo oscuro)
         // borde sutil para dar profundidad
       >
