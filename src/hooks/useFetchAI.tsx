@@ -4,7 +4,7 @@ import type { HojaDeVida } from "../types/cv";
 import toast from 'react-hot-toast';
 
 const MAX_REINTENTOS = 3;
-const DELAY_BASE_MS = 1000; // 1s → 2s → 4s
+const DELAY_BASE_MS = 1000; // 
 
 const esperar = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 

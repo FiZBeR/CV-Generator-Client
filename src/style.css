@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @config "../tailwind.config.js";
 
 .a4-sheet {
@@ -6,18 +9,80 @@
     width: 100%;
     max-width: 800px;
 }
-/* Custom scrollbar for textareas */
+/* Estilos para scrollbar en textareas (opcional) */
 textarea::-webkit-scrollbar {
     width: 8px;
 }
-textarea::-webkit-scrollbar-track {
-    background: transparent;
-}
 textarea::-webkit-scrollbar-thumb {
-    background-color: #e5e2e3;
-    border-radius: 4px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 2px;
 }
 
 .nav-link {
     transition: color 0.2s ease-in-out;
+}
+
+@layer base {
+  :root {
+    /* ─── tokens desde el prototipo ───────────────────── */
+    --bg: #050505;
+    --surface: #0b0b0f;
+    --fg: #ffffff;
+    --muted: #9ca3af;
+    --accent: #00ff66;
+    --cyan: #00ccff;
+    --accent-ch: 0 255 102;
+    --bg-ch: 5 5 5;
+    --glass-bg: rgba(11, 15, 25, 0.5);
+    --glass-border: rgba(255,255,255,0.10);
+    --glass-border-accent: rgba(0,255,102,0.30);
+    --glass-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    --img-overlay: rgba(0,0,0,0.6);
+    --hairline: rgba(255,255,255,0.10);
+    --stroke-soft: rgba(255,255,255,0.14);
+    --stroke-strong: rgba(255,255,255,0.26);
+    --pill: rgba(255,255,255,0.04);
+    --pill-hover: rgba(255,255,255,0.08);
+    --glow-green: rgba(0,255,102,0.15);
+    --ink-soft: rgba(5,5,5,0.55);
+    --ink-line: rgba(5,5,5,0.12);
+    --header-h: 72px;
+    --radius: 2px;
+    --radius-lg: 0px;
+    --gap: 24px;
+  }
+
+  /* Fondo global */
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Aptos', 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Scrollbar (opcional, para igualar) */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--hairline);
+    border-radius: 2px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--hairline) transparent;
+  }
+}
+
+@theme {
+  --color-brand-accent: #00ff66;
+  --color-bg-primary: #050505;
+  --color-text-primary: #ffffff;
+  --color-border-soft: rgba(255,255,255,0.14);
+  --color-border-strong: rgba(255,255,255,0.26);
+  --color-pill: rgba(255,255,255,0.04);
+  --color-pill-hover: rgba(255,255,255,0.08);
+  --shadow-glow-green: 0 0 20px rgba(0,255,102,0.4);
 }

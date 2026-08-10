@@ -1,68 +1,51 @@
-
 const SkeletonCV = () => {
-
-
   return (
-    // 1. EL CONTENEDOR A4 (La base de la hoja)
-    // Quitamos el padding. Mantenemos el overflow-hidden y agregamos un resplandor neón sutil.
-    <div
-      className={`relative mx-auto  overflow-hidden bg-white transition-all duration-300`}
-      style={{
-        width: "100%",
-        maxWidth: "3000px",
-        minHeight: "1123px",
-      }}
+    <article
+      className={`
+    border border-border-glass rounded-sm transition-colors duration-200
+    p-10 px-9
+    
+  `}
+      id="sheet"
+      aria-label="Vista previa del documento A4"
     >
-      {/* 3. LA HOJA DE PAPEL REAL (El Passepartout) */}
-      {/* Esta capa blanca se pega a 3px de los bordes, dejando escapar solo el rayo neón */}
-      <div className="flex flex-col top-[2px] left-[2px] right-[2px] bottom-[2px] bg-white z-10 p-[40px_50px]">
-        {/* EL ESQUELETO (Las barras grises de carga) */}
-        <div
-          className={`relative mx-auto overflow-hidden bg-white transition-all duration-300`}
-          style={{
-            width: "100%",
-            maxWidth: "525px",
-            minHeight: "1123px",
-          }}
-        >
-          
-          {/* Título y subtítulo */}
-          <div className="flex flex-col gap-2 mb-4">
-            <div className="h-10 bg-surface-container-highest rounded w-1/3"></div>
-            <div className="h-4 bg-surface-container-highest rounded w-1/4"></div>
-          </div>
+      <div className="flex flex-col gap-4" id="skel" aria-hidden="true">
+        {/* Nombre */}
+        <div className="h-6 w-2/5 rounded-sm bg-white/16" />
+        <div className="h-2.5 w-[70%] rounded-sm bg-white/10" />
 
-          <hr className="border-outline-variant mb-4" />
+        {/* Sección */}
+        <div className="h-3 w-1/4 mt-1 rounded-sm bg-white/15" />
+        <div className="h-2.5 w-full rounded-sm bg-white/10" />
+        <div className="h-2.5 w-[88%] rounded-sm bg-white/10" />
+        <div className="h-2.5 w-[58%] rounded-sm bg-white/10" />
 
-          {/* Párrafo de Perfil */}
-          <div className="flex flex-col gap-3 mb-4">
-            <div className="h-4 bg-surface-container-high rounded w-full"></div>
-            <div className="h-4 bg-surface-container-high rounded w-full"></div>
-            <div className="h-4 bg-surface-container-high rounded w-5/6"></div>
-          </div>
+        {/* Sección */}
+        <div className="h-3 w-1/4 mt-1 rounded-sm bg-white/15" />
+        <div className="h-2.5 w-full rounded-sm bg-white/10" />
+        <div className="h-2.5 w-[76%] rounded-sm bg-white/10" />
+        <div className="h-2.5 w-[88%] rounded-sm bg-white/10" />
+        <div className="h-2.5 w-[58%] rounded-sm bg-white/10" />
 
-          {/* Sección de Habilidades simulada */}
-          <div className="h-6 bg-surface-container-highest rounded w-1/4 mb-2"></div>
-          <hr className="border-outline-variant mb-4" />
-          <div className="flex gap-4 mb-8">
-            <div className="h-4 bg-surface-container-high rounded w-1/4"></div>
-            <div className="h-4 bg-surface-container-high rounded w-1/2"></div>
-          </div>
+        {/* Sección */}
+        <div className="h-3 w-1/4 mt-1 rounded-sm bg-white/15" />
+        <div className="h-2.5 w-full rounded-sm bg-white/10" />
+        <div className="h-2.5 w-[76%] rounded-sm bg-white/10" />
 
-          {/* Sección de Experiencia simulada */}
-          <div className="h-6 bg-surface-container-highest rounded w-1/4 mb-2"></div>
-          <hr className="border-outline-variant mb-4" />
-          <div className="flex justify-between mb-4">
-            <div className="h-5 bg-surface-container-highest rounded w-1/3"></div>
-            <div className="h-4 bg-surface-container-high rounded w-1/6"></div>
-          </div>
-          <div className="flex flex-col gap-3 pl-4">
-            <div className="h-4 bg-surface-container-high rounded w-full"></div>
-            <div className="h-4 bg-surface-container-high rounded w-11/12"></div>
-          </div>
+        {/* Sección */}
+        <div className="h-3 w-1/4 mt-1 rounded-sm bg-white/15" />
+        <div className="flex gap-3">
+          <div className="h-2.5 w-[30%] rounded-sm bg-white/10" />
+          <div className="h-2.5 w-[24%] rounded-sm bg-white/10" />
+          <div className="h-2.5 w-[42%] rounded-sm bg-white/10" />
+          <div className="h-2.5 w-[36%] rounded-sm bg-white/10" />
         </div>
+
+        <p className="mt-[18px] font-mono text-[11px] tracking-[0.06em] uppercase text-text-muted">
+          Tu CV aparecerá aquí
+        </p>
       </div>
-    </div>
+    </article>
   );
 };
 

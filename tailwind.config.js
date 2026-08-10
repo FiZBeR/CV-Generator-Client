@@ -1,100 +1,111 @@
-/* @type {import('tailwindcss').Config} */
-
 export default {
     darkMode: "class",
     content: [
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
-        // Agrega aquí la ruta exacta de tu modal si está fuera
         "./modals/**/*.{js,ts,jsx,tsx}",
-      ],
-    theme: {
-        extend: {
-            "colors": {
-                "primary-fixed-dim": "#c0c6db",
-                "primary-container": "#141b2b",
-                "tertiary-container": "#261906",
-                "on-secondary-fixed": "#151c27",
-                "tertiary": "#ffffff",
-                "on-tertiary-fixed-variant": "#55442d",
-                "secondary-container": "#dce2f3",
-                "on-secondary": "#ffffff",
-                "outline": "#76777d",
-                "on-error": "#ffffff",
-                "on-primary-fixed-variant": "#404758",
-                "primary": "#5d3fd3",
-                "on-tertiary-fixed": "#261906",
-                "outline-variant": "#c6c6cd",
-                "on-secondary-fixed-variant": "#404754",
-                "secondary-fixed-dim": "#c0c7d6",
-                "error": "#ba1a1a",
-                "surface-tint": "#575e70",
-                "tertiary": "#000000",
-                "error-container": "#ffdad6",
-                "on-surface": "#1b1b1d",
-                "tertiary-fixed": "#f9debf",
-                "surface-container-high": "#eae7e9",
-                "on-background": "#1b1b1d",
-                "on-error-container": "#93000a",
-                "surface-dim": "#dcd9db",
-                "surface-container": "#f0edee",
-                "secondary": "#585f6c",
-                "surface-bright": "#fcf8fa",
-                "surface-container-highest": "#e5e2e3",
-                "surface-variant": "#e5e2e3",
-                "on-surface-variant": "#45464c",
-                "on-primary-fixed": "#141b2b",
-                "inverse-primary": "#c0c6db",
-                "tertiary-fixed-dim": "#dcc2a4",
-                "secondary-fixed": "#dce2f3",
-                "on-tertiary-container": "#968065",
-                "primary-fixed": "#dce2f7",
-                "surface-container-low": "#f6f3f4",
-                "background": "#fcf8fa",
-                "inverse-on-surface": "#f3f0f1",
-                "surface": "#fcf8fa",
-                "on-tertiary": "#ffffff",
-                "inverse-surface": "#303031",
-                "on-primary-container": "#7d8497",
-                "on-secondary-container": "#5e6572",
-                "on-primary": "#ffffff"
-            },
-            "borderRadius": {
-                "DEFAULT": "0.125rem",
-                "lg": "0.25rem",
-                "xl": "0.5rem",
-                "full": "0.75rem"
-            },
-            "spacing": {
-                "xs": "0.25rem",
-                "md": "1rem",
-                "sm": "0.5rem",
-                "container-max": "1280px",
-                "lg": "1.5rem",
-                "gutter": "24px",
-                "base": "4px",
-                "xl": "2rem",
-                "2xl": "3rem"
-            },
-            "fontFamily": {
-                "label-caps": ["Inter"],
-                "title-md": ["Inter"],
-                "body-md": ["Inter"],
-                "body-sm": ["Inter"],
-                "display-lg": ["Inter"],
-                "headline-lg": ["Inter"],
-                "headline-lg-mobile": ["Inter"]
-            },
-            "fontSize": {
-                "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                "title-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
-                "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-                "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-                "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
-            }
-        }
-    }
+    ],
+      theme: {
+    extend: {
+      // ─── Paleta de colores ─────────────────────────────
+      colors: {
+        // fondo
+        'bg-primary': '#050505',        // --bg
+        'bg-surface': '#0b0b0f',        // --surface
+        'bg-glass': 'rgba(11, 15, 25, 0.5)', // --glass-bg
+        
+        // texto
+        'text-primary': '#ffffff',      // --fg
+        'text-muted': '#9ca3af',        // --muted
+        
+        // acentos neón
+        'brand-accent': '#00ff66',      // --accent
+        'brand-cyan': '#00ccff',        // --cyan
+        
+        // bordes / strokes (derivados de mix)
+        'border-glass': 'rgba(255,255,255,0.10)',    // --glass-border
+        'border-accent': 'rgba(0,255,102,0.30)',     // --glass-border-accent
+        'border-hairline': 'rgba(255,255,255,0.10)', // --hairline
+        'border-soft': 'rgba(255,255,255,0.14)',     // --stroke-soft
+        'border-strong': 'rgba(255,255,255,0.26)',   // --stroke-strong
+        
+        // overlays
+        'img-overlay': 'rgba(0,0,0,0.6)',            // --img-overlay
+        
+        // efectos
+        'pill': 'rgba(255,255,255,0.04)',            // --pill
+        'pill-hover': 'rgba(255,255,255,0.08)',      // --pill-hover
+        'glow-green': 'rgba(0,255,102,0.15)',        // --glow-green
+        'ink-soft': 'rgba(5,5,5,0.55)',              // --ink-soft (bg al 55% sobre texto)
+        'ink-line': 'rgba(5,5,5,0.12)',              // --ink-line
+      },
+      
+      // ─── Tipografías ──────────────────────────────────
+      fontFamily: {
+        'display': ['Space Grotesk', 'Segoe UI Variable Display', 'Segoe UI', 'system-ui', '-apple-system', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        'body': ['Aptos', 'Segoe UI Variable Text', 'Segoe UI', 'system-ui', '-apple-system', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        'mono': ['ui-monospace', 'Cascadia Code', 'SF Mono', 'JetBrains Mono', 'Menlo', 'Consolas', 'monospace'],
+      },
+      
+      // ─── Tamaños de fuente ──────────────────────────────
+      fontSize: {
+        'h2': 'clamp(28px, 2.6vw, 36px)',
+        'lead': '16px',
+        'body': '15px',
+        'meta': '12px',
+      },
+      
+      // ─── Geometría (border-radius) ──────────────────────
+      borderRadius: {
+        'none': '0px',
+        'sm': '2px',        // --radius
+        'lg': '0px',        // --radius-lg (override para paneles)
+        'xl': '0px',
+        '2xl': '0px',
+        '3xl': '0px',
+      },
+      
+      // ─── Sombras ─────────────────────────────────────────
+      boxShadow: {
+        'glass': '0 20px 50px rgba(0,0,0,0.8)',          // --glass-shadow
+        'glow-green': '0 0 20px rgba(0,255,102,0.4)',     // hover btn-primary
+        'inner-glow': 'inset 0 0 16px rgba(0,255,102,0.12)', // focus textarea
+      },
+      
+      // ─── Backgrounds ────────────────────────────────────
+      backgroundImage: {
+        'brand-gradient': 'linear-gradient(135deg, #00ff66, #00ccff)',
+        'gradient-to-top': 'linear-gradient(to top, #050505 72%, transparent)',
+      },
+      
+      // ─── Backdrop blur ──────────────────────────────────
+      backdropBlur: {
+        'glass': '20px',
+        'glass-sm': '12px',
+        'overlay': '8px',
+      },
+      
+      // ─── Espaciados ─────────────────────────────────────
+      spacing: {
+        'header': '72px',      // --header-h
+        'gap': '24px',         // --gap
+      },
+      
+      // ─── Transiciones ───────────────────────────────────
+      transitionDuration: {
+        '180': '180ms',
+      },
+      transitionTimingFunction: {
+        'ease-soft': 'ease',
+      },
+      
+      // ─── Filtros (opcional) ────────────────────────────
+      brightness: {
+        'glass': '0.72',       // para el header
+      },
+    },
+  },
+  plugins: []
 }
+
