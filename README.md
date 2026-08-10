@@ -11,7 +11,7 @@ En lugar de llenar un formulario tradicional campo por campo, describes tu **per
 ## 📸 Vista previa
 
 
-![Vista principal de CV AI](./public/preview.png)
+![Vista principal de CV AI](./public/preview.PNG)
 
 ---
 
@@ -189,17 +189,17 @@ src/
 
 ## 📱 Capturas de pantalla
 
-![Generación del CV con IA](./public/generando.png)
+![Generación del CV con IA](./public/generando.PNG)
 
 ---
 
 
-![Resultado del CV generado](./public/resultado.png)
+![Resultado del CV generado](./public/resultado.PNG)
 
 ---
 
 
-![Vista responsiva en móvil](./public/mobile.png)
+![Vista responsiva en móvil](./public/mobile.PNG)
 
 ---
 
